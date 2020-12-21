@@ -21,14 +21,16 @@ export default {
     },
      deliverToken () { 
        this.$refs.framePage.contentWindow.postMessage({type: 'token', data:this.$token.loadToken()}, '*')
+      //  this.$refs.framePage.contentWindow.postMessage({type: 'tabParam', data:''}, '*')
+      //  this.$refs.framePage.contentWindow.postMessage({type: 'currentTag', data:''}, '*')
     }
 
   },
   data() {
     return {
-      // reportUrl: 'http://120.78.186.60:8097',
-      // http://localhost:8097/
-      reportUrl: 'http://120.78.186.60:8113/',
+
+      // reportUrl: 'http://120.78.186.60:8113/',
+      reportUrl: 'http://120.78.186.60:8117/',
       searchTableHeight: 0,
       searchTableWidth: 0,
       token: '',
@@ -64,7 +66,7 @@ export default {
     position: absolute;
     left: 0;
     right: 0;
-    top: 70px !important;
+    top: 60px !important;
     bottom: 0;
     width: 100%;
     height: 100%;

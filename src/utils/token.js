@@ -15,7 +15,7 @@ var token = {
   },
   saveUserInfo: function (userInfo) {
     sessionStorage.setItem("employeeId", userInfo.id);
-    sessionStorage.setItem("employeeName", userInfo.username);
+    sessionStorage.setItem("employeeName", userInfo.nickname);
   },
   saveSelectedCompany: function (companyCode) {
     sessionStorage.setItem("contractBody", companyCode);

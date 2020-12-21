@@ -175,3 +175,10 @@ a {
 .v-note-wrapper .v-note-panel {
     min-height: 500px;
 }
+.iframe{
+    border: none;
+    border-top: 1px solid #e6e6e6 ;
+}
+.el-menu .el-menu--horizontal {
+    border-bottom: none;
+}

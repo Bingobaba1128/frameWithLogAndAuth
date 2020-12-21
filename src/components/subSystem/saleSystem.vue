@@ -39,7 +39,7 @@ export default {
     position: absolute;
     left: 0;
     right: 0;
-    top: 70px !important;
+    top: 60px !important;
     bottom: 0;
     width: 100%;
     height: 100%;

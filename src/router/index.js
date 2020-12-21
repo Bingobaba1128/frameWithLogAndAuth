@@ -152,6 +152,7 @@ import localLogout from '../components/page/ssoLogout.vue'
 import hrSystem from '../components/subSystem/hrSystem.vue'
 import shenPiSystem from '../components/subSystem/shenPiSystem.vue'
 import chengYiSystem from '../components/subSystem/chengYi.vue'
+import fuZhuangSystem from '../components/subSystem/fuZhuang.vue'
 
 
 Vue.use(Router);
@@ -209,7 +210,12 @@ const router = new Router({
                     path: '/成衣系统',
                     name: 'caiGouSystem',
                     component: chengYiSystem 
-                }      
+                },
+                {
+                    path: '/服装系统',
+                    name: 'clothingSystem',
+                    component: fuZhuangSystem 
+                }       
             ]
         }
     ],

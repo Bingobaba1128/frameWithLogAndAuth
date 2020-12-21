@@ -1,105 +1,28 @@
 <template>
     <div class="header">
-        <div class="header-left">
             <div class="logo">
                 <img  :src="imgUrl">
             </div>
-            <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-  <el-menu-item index="1" @click="backToConsole">工作台</el-menu-item>
-
-  <el-menu-item index="2" @click="toChengYiSystem">成衣系统</el-menu-item>
-
-
-  <!-- <el-submenu index="2">
-    <template slot="title">我的工作台</template>
-    <el-menu-item index="2-1">选项1</el-menu-item>
-    <el-menu-item index="2-2">选项2</el-menu-item>
-    <el-menu-item index="2-3">选项3</el-menu-item>
-    <el-submenu index="2-4">
-      <template slot="title">选项4</template>
-      <el-menu-item index="2-4-1">选项1</el-menu-item>
-      <el-menu-item index="2-4-2">选项2</el-menu-item>
-      <el-menu-item index="2-4-3">选项3</el-menu-item>
-    </el-submenu>
-  </el-submenu> -->
-  <!-- <el-menu-item index="3" disabled>消息中心</el-menu-item> -->
-  <el-menu-item index="4"><a @click="jumpToSp">审批管理</a></el-menu-item>
-</el-menu>
-            <!-- <div class="root header_text" @click="backToConsole">
-                工作台
-            </div> -->
-            <!-- <div style="position:relative"> -->
-               <!-- <div class="root header_text" @click="toHrSystem">
-                    人事管理
-                </div>  -->
-            <!-- </div> -->
-            
-            <!-- <div class="expanded" v-show="true" style="align-item:center">
-                <div class="system-list header_text" 
-                    v-for="(item, index) in nav"
-                    :key="index"
-                    @click="routerLink(index, item)">
-                    <li class="list_style" style="list-style-type:none;">
-                        <p :class="navIndex === index ? 'active list' : ''">
-                            {{ item.name }}
-                        </p>
-                    </li>
-                </div>               
-            </div>     -->
-        </div>
-
-        <div class="header-right">
+            <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="border-bottom:none;background-color: #5C8BFA;">
+                <el-menu-item index="1" @click="backToConsole">工作台</el-menu-item>
+                <el-menu-item index="2" @click="toChengYiSystem">成衣系统</el-menu-item>
+                <el-menu-item index="3" @click="toClothingSystem">服装系统</el-menu-item>
+                <el-menu-item index="4"><a @click="jumpToSp">审批管理</a></el-menu-item>
+            </el-menu>
             <div class="header-user-con">
-                
-            <el-dropdown class="flex-header-div" v-show='true'>
-                    <span class="el-dropdown-link" style="color:#4D96F4">
-                        {{showCompanyName}}
-                    </span>
-                </el-dropdown>
-
-            
-
             <el-dropdown class="flex-header-div" style="display:flex">
-                <!-- <div class="user-avator">
+                <div class="user-avator">
                     <div class="el-icon-s-custom"></div>
-                </div> -->
-                欢迎您，
-                <span class="el-dropdown-link" style="color:#4D96F4">
+                </div>
+                <span class="el-dropdown-link" style="color:#fff;font-size:18px">
                     {{ user.nickname }}
                 </span>
             </el-dropdown>
-
-            <!-- <div class="flex-header-div">
-                <img  :src="imgCompany" style="width:23%">
-                <el-dropdown  trigger="click" @command="handleCommand" >
-                    <span class="el-dropdown-link header_text" style="color:#666666">
-                        切换公司
-                        <i class="el-icon-caret-bottom"></i>
-                        <el-dropdown-menu slot="dropdown" class="user-dropdown" >
-                            <el-dropdown-item v-for="(company) in companyNewDetail" 
-                                :key="company.authority" 
-                                :command="{id:company.id,authority:company.authority,name:company.displayName}">
-                                <span style="display:block;" >{{company.displayName}}</span>
-                            </el-dropdown-item>
-                        </el-dropdown-menu>
-                    </span>
-                </el-dropdown>
-            </div> -->
-
-                <!-- <div class="flex-header-div btn-message" >
-                    <el-tooltip>
-                        <i class="el-icon-message" style="color:#666666"></i>
-                    </el-tooltip>
-                    <span class="btn-message-badge" style="color:#666666">消息</span>
-                </div> -->
-
                 <div class="flex-header-div btn-logout" @click="userLogout">
-                    <i class="el-icon-switch-button" style="color:#666666" ></i>
-                    <span style="color:#666666">退出</span>
-                </div>
-                
+                    <i class="el-icon-switch-button" style="color:#fff;font-size:18px" ></i>
+                    <span style="color:#fff;font-size:18px">退出</span>
+                </div>  
             </div>
-        </div>
     </div>
 </template>
 
@@ -226,6 +149,9 @@
             toChengYiSystem(){
                 this.$router.push('/成衣系统') 
             },
+                        toClothingSystem(){
+                this.$router.push('/服装系统') 
+            },
             jumpToSp(){
                 this.$router.push('/审批系统') 
             },
@@ -277,18 +203,39 @@
     }
 </script>
 
-<style scoped>
+<style>
+.el-menu .el-menu--horizontal {
+    border-bottom: 0px !important
+}
+.el-menu--horizontal>.el-menu-item:not(.is-disabled):focus, .el-menu--horizontal>.el-menu-item:not(.is-disabled):hover, .el-menu--horizontal>.el-submenu .el-submenu__title:hover {
+    background-color: #5C8BFA;
+    color: #fff;
+}
+.el-menu--horizontal>.el-menu-item.is-active {
+    border-bottom: 2px solid #fff;
+    color: #fff;
+}
+.el-menu--horizontal>.el-menu-item {
+    color: #fff;
+    font-size: 16px;
+}
+.el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
+    background-color: #5C8BFA;
+    color: #fff;
+}
     .header {
+        display: flex;
         position: relative;
         width: 100%;
-        height: 70px;
+        height: 60px;
         font-size: 22px;
         color: #fff;
+        background-color: #5C8BFA;
         box-shadow: 0 0 3px 0 #F2F2F3;
+            border-bottom: 0px solid #e6e6e6;
     }
     .flex-header-div {
         text-align: center;
-        height: 70px;
         display: flex;
         align-items: center;
         padding: 16px;
@@ -297,7 +244,6 @@
         float: left;
         display: flex;
         color:#4D96F4;
-        height: 70px;
     }
     .header_text {
         color: #666666;
@@ -314,12 +260,13 @@
         float: left;
         width: 200px;
         line-height: 70px;
-        background-color: #0A1420;
+        background-color: #4A76E2;
         position: relative;
     }
     .header .logo img{
         position: absolute;
         top: 50%;
+            width: 130px;
         left: 50%;
         transform: translate(-50%,-50%);
     }
@@ -328,8 +275,8 @@
         color:#4D96F4
     }
     .header-user-con {
+        margin-left: auto;
         display: flex;
-        height: 70px;
         align-items: center;
         justify-content: space-around;
     }
