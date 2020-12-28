@@ -12,14 +12,18 @@
             <div class="header-user-con">
             <el-dropdown class="flex-header-div" style="display:flex">
                 <div class="user-avator">
-                    <div class="el-icon-s-custom"></div>
+                     <img  :src="userIcon" style="padding:10px;width:37px">
                 </div>
                 <span class="el-dropdown-link" style="color:#fff;font-size:18px">
                     {{ user.nickname }}
                 </span>
             </el-dropdown>
+                            <div class="flex-header-div btn-logout">
+                    <i class="el-icon-message" style="color:#fff;font-size:32px;padding-right:5px" ></i>
+                    <span style="color:#fff;font-size:18px">消息</span>
+                </div>  
                 <div class="flex-header-div btn-logout" @click="userLogout">
-                    <i class="el-icon-switch-button" style="color:#fff;font-size:18px" ></i>
+                    <i class="el-icon-switch-button" style="color:#fff;font-size:32px;padding-right:5px" ></i>
                     <span style="color:#fff;font-size:18px">退出</span>
                 </div>  
             </div>
@@ -30,7 +34,8 @@
     import bus from '../../utils/bus';
     import * as api from '../../api/api.js';
     import querystring from "querystring";
-    import imgUrl from "../../assets/img/nav_logo.png"
+    import imgUrl from "../../assets/img/北江logo@2x.png"
+    import userIcon from "../../assets/img/touxiang@2x.png"
     import imgCompany from '../../assets/img/icon_company.png'
 
     export default {
@@ -47,6 +52,7 @@
                 companyNewDetail:[],
                 switchCompany: this.$store.displayName,
                 imgUrl:imgUrl,
+                userIcon:userIcon,
                 imgCompany:imgCompany
 
             };

@@ -2,6 +2,11 @@
   <div style="height:50px">
     <div style="display:flex;align-items: center;height:49px">
       <p class="header_title">{{ param }}</p>
+      <div style="margin-left:auto;display:flex;justify-content:center;align-item:center;padding:10px">
+                           <img  :src="userIcon" style="">
+
+      </div>
+
     </div>
 
     <div style="padding: 0">
@@ -11,12 +16,14 @@
 </template>
 
 <script>
+import userIcon from "../../assets/img/tianjiaricheng@2x.png"
+
 export default {
-  props: {
-    param: String,
-  },
+  props: ['param','userIcon'],
+
   data() {
     return {
+      
     }
   },
   methods: {
@@ -32,8 +39,8 @@ export default {
           font-size:18px;
 font-family:Microsoft YaHei;
 font-weight:400;
-padding-bottom: 11px;
-padding-top: 21px;
+display: flex;
+justify-content: center;
 
 color: #333333;
     }

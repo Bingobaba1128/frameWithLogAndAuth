@@ -43,6 +43,7 @@ var token = {
     tokenInfo.employeeName = sessionStorage.getItem("employeeName");
     tokenInfo.contractBody = sessionStorage.getItem("contractBody");
     tokenInfo.gsCode = sessionStorage.getItem("gsCode");
+    tokenInfo.currentTag = sessionStorage.getItem("currentTag");
     return tokenInfo;
   },
 

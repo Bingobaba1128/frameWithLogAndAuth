@@ -32,8 +32,7 @@ export default {
     return {
 
       // reportUrl: 'http://120.78.186.60:8113/',
-      // reportUrl: 'http://120.78.186.60:8117/',
-      reportUrl: BaseUrlShenPi +  '/#/审批管理/审批管理',
+      reportUrl: BaseUrlShenPi +  '/#/审批管理/审批管理/抄送我的',
       searchTableHeight: 0,
       searchTableWidth: 0,
       token: '',

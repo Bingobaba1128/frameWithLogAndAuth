@@ -151,6 +151,9 @@ import localLogin from '../components/page/localLogin.vue'
 import localLogout from '../components/page/ssoLogout.vue'
 import hrSystem from '../components/subSystem/hrSystem.vue'
 import shenPiSystem from '../components/subSystem/shenPiSystem.vue'
+import shenPiSystem2 from '../components/subSystem/shenPiSystem2.vue'
+import shenPiSystem3 from '../components/subSystem/shenPiSystem3.vue'
+import shenPiSystem4 from '../components/subSystem/shenPiSystem4.vue'
 import chengYiSystem from '../components/subSystem/chengYi.vue'
 import fuZhuangSystem from '../components/subSystem/fuZhuang.vue'
 
@@ -205,6 +208,21 @@ const router = new Router({
                     path: '/审批系统',
                     name: 'shenPiSystem',
                     component: shenPiSystem 
+                },
+                {
+                    path: '/审批系统/审批管理/我审批的',
+                    name: 'shenPiSystem2',
+                    component: shenPiSystem2
+                },
+                {
+                    path: '/审批系统/审批管理/我发起的',
+                    name: 'shenPiSystem3',
+                    component: shenPiSystem3 
+                },
+                {
+                    path: '/审批系统/审批管理/抄送我的',
+                    name: 'shenPiSystem4',
+                    component: shenPiSystem4 
                 },
                 {
                     path: '/成衣系统',
